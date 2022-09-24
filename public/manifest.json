@@ -1,0 +1,41 @@
+{
+  "name": "chrome-typescript-manifestv3",
+  "short_name": "chrome-ts",
+  "version": "0.1",
+  "version_name": "0.1",
+  "manifest_version": 3,
+  "description": "",
+  "permissions": [],
+  "icons": {
+    "16": "./icons/icon16.png",
+    "48": "./icons/icon48.png",
+    "128": "./icons/icon128.png",
+    "256": "./icons/icon256.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "./icons/icon16.png",
+      "24": "./icons/icon24.png",
+      "32": "./icons/icon32.png"
+    },
+    "default_title": "Click me",
+    "default_popup": "./popup/popup.html"
+  },
+  "background": {
+    "type": "module",
+    "service_worker": "./background/background.js"
+  },
+  "options_page": "./options/options.html",
+  "host_permissions": ["*://*/**"],
+  "web_accessible_resources": [
+    {
+      "matches": ["<all_urls>"],
+      "resources": [
+        "popup/popup.html",
+        "options/options.html",
+        "content/content.js"
+      ]
+    }
+  ],
+  "offline_enabled": false
+}
